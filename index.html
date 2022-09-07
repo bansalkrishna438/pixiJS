@@ -4,10 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.js" integrity="sha512-XHX32YCocEDCIiENmO7pf91TtRITLfCagN+uLlj9sJ7RUVBHN1JZtlfb02x4OyXfkuQegd1u6i9mzpRMg+w5xw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        *{
+            margin: 0;
+        }
+        #progress{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: green;
+            height: 3px;
+            width: 0;
+            z-index: 1999;
+        }
+    </style>
     <title>pixi Tutorial</title>
 </head>
 <body>
-    <script src="./node_modules/pixi.js/dist/browser/pixi.min.js "></script>
-    <script src="./app.js"></script>
+    <div id="progress"></div>
+    <script>
+        console.log('pixi',PIXI);
+        const game =new PIXI.Application({
+            width:innerWidth,
+            height:innerHeight,
+            backgroundColor: 0xff0000
+        });
+        console.log('pixi instance', game);
+        document.body.appendChild(game.view);
+
+        const Hello=new PIXI.Text('hello world!!');
+        Hello.x = innerWidth/2;
+        Hello.y=innerHeight/2;
+        Hello.anchor.set(0.5);
+        
+
+        game.loader.add('car1','https://cdn.pixabay.com/photo/2017/02/01/12/23/car-2030056_960_720.png')
+        .add('car2','https://www.kindpng.com/picc/m/728-7289756_cartoon-car-birds-eye-view-hd-png-download.png')
+        .load(
+            () => {
+                const car1 = PIXI.Sprite.from('car1');
+                const car2 = PIXI.Sprite.from('car2');
+                game.stage.addChild(car1);
+                game.stage.addChild(car2);
+                game.stage.addChild(Hello);
+            });
+        let pDiv = document.getElementById('progress');
+        game.loader.onProgress.add((e)=>{
+            console.log('loaded',e.progress);
+            pDiv.style.width=e.progress+"%";
+        });
+    </script>
 </body>
 </html>
