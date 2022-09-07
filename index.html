@@ -39,21 +39,21 @@
         Hello.anchor.set(0.5);
         
 
-        game.loader.add('car1','https://cdn.pixabay.com/photo/2017/02/01/12/23/car-2030056_960_720.png').add('car2','https://www.kindpng.com/picc/m/728-7289756_cartoon-car-birds-eye-view-hd-png-download.png').load(
+        game.loader.add('car1','https://cdn.pixabay.com/photo/2017/02/01/12/23/car-2030056_960_720.png')
+        .add('car2','https://www.kindpng.com/picc/m/728-7289756_cartoon-car-birds-eye-view-hd-png-download.png')
+        .load(
             () => {
                 const car1 = PIXI.Sprite.from('car1');
                 const car2 = PIXI.Sprite.from('car2');
                 game.stage.addChild(car1);
                 game.stage.addChild(car2);
-                game.stage.addChild(Hello)
-            }
-        );
+                game.stage.addChild(Hello);
+            });
         let pDiv = document.getElementById('progress');
         game.loader.onProgress.add((e)=>{
             console.log('loaded',e.progress);
             pDiv.style.width=e.progress+"%";
         });
-        //PIXI.loader.load;
     </script>
 </body>
 </html>
