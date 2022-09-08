@@ -77,9 +77,16 @@ const style = new PIXI.TextStyle({
     dropShadow: true,
     dropShadowDistance:10,
     dropShadowAngle: Math.PI / 2,
+    dropShadowBlur:4,
     dropShadowColor:'#000000'
 });
 
 const myText = new PIXI.Text('Hello World!',style);
 
 app.stage.addChild(myText);
+
+myText.text='Text Chnaged!';
+
+myText.style.worldWrap = true;
+myText.style.worldWrapWidth = 100;
+myText.style.align='center'
