@@ -28,23 +28,29 @@ function loadAssets(list, onLoadComplete) {
 
   function start(loader, resources) {
     console.log('params ', arguments);
-    
-      
-    for(var i=0;i<=12;i++)
+    var x=0;
+    for(var i=1;i<12;i++)
     {
+      x=x+100;
       const deck = new PIXI.Texture(resources['back'].texture,
       new PIXI.Rectangle(0,384,71,95));
       const back = PIXI.Sprite.from(deck);
-      back.scale.set(1.2);
+      back.scale.set(1.3);
+      back.x=x;
       game.stage.addChild(back);
     }
-    for(var i=0;i<=12;i++)
+    var x= 0;
+    for(var i=0;i<12;i++)
     {
+      x=x+100
       const smily = new PIXI.Texture(resources['front'].texture,
       new PIXI.Rectangle(0,0,71,95));
       const front = PIXI.Sprite.from(smily);
-      front.scale.set(1.2);
+      front.scale.set(1.3);
+      front.x=x;
       game.stage.addChild(front);
   }
 }
+function toggle(){
 
+}
