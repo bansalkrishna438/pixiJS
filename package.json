@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/bansalkrishna438/pixiJS#readme",
   "dependencies": {
+    "@pixi/graphics-extras": "^6.5.2",
     "pixi.js": "^6.5.2"
   },
   "description": ""
