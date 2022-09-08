@@ -44,7 +44,7 @@ function loadAssets(list, onLoadComplete) {
     {
       x=x+100
       const smily = new PIXI.Texture(resources['front'].texture,
-      new PIXI.Rectangle(0,0,71,95));
+      new PIXI.Rectangle(0,0,71,95),new PIXI.Rectangle(72,0,71,95));
       const front = PIXI.Sprite.from(smily);
       front.scale.set(1.3);
       front.x=x;
