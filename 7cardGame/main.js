@@ -1,14 +1,13 @@
 const game = new PIXI.Application({
-  width: 800,
-  height: 600,
+  width: innerWidth,
+  height: innerHeight,
   backgroundColor: 0x3366ff,
 });
 document.getElementById("game").append(game.view);
 loadAssets([
-  { name: "back", url: "assets/cardback.png" },
-  { name: "front", url: "assets/smilies.jpg" },
+  { name: "back", url: "assets/card.png" },
+  { name: "front", url: "assets/card.png" },
 ], start);
-//------------------------------
 const pBar = document.getElementById("bar");
 const pText = document.getElementById("progress");
 function preload(e) {
@@ -22,20 +21,30 @@ function preload(e) {
   }
   console.log(e.progress);
 }
-
 function loadAssets(list, onLoadComplete) {
   game.loader.onProgress.add(preload);
   game.loader.add(list).load(onLoadComplete);
 }
-//----------------------------------
-function start(loader, resources) {
+
+  function start(loader, resources) {
     console.log('params ', arguments);
-    const back = PIXI.Sprite.from(resources['back'].texture);
-    back.scale.set(0.2);
-    game.stage.addChild(back);
-    const smily = new PIXI.Texture(resources['front'].texture,
-    new PIXI.Rectangle(0,0,150,150));
-    const front = PIXI.Sprite.from(smily);
-    // front.scale.set(0.2);
-    game.stage.addChild(front);
+    
+      
+    for(var i=0;i<=12;i++)
+    {
+      const deck = new PIXI.Texture(resources['back'].texture,
+      new PIXI.Rectangle(0,384,71,95));
+      const back = PIXI.Sprite.from(deck);
+      back.scale.set(1.2);
+      game.stage.addChild(back);
+    }
+    for(var i=0;i<=12;i++)
+    {
+      const smily = new PIXI.Texture(resources['front'].texture,
+      new PIXI.Rectangle(0,0,71,95));
+      const front = PIXI.Sprite.from(smily);
+      front.scale.set(1.2);
+      game.stage.addChild(front);
+  }
 }
+
