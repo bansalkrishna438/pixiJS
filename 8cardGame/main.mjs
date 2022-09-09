@@ -4,8 +4,8 @@ import { loadAssets } from "./js/loader.mjs";
 
 export function createGame(div) {
     const game = new Application({
-        width:1024,
-        height:920,
+        width:innerWidth,
+        height:innerHeight,
         backgroundColor:0x2266FF
     });
     console.log('game', game);
