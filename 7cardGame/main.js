@@ -40,15 +40,18 @@ function loadAssets(list, onLoadComplete) {
       game.stage.addChild(back);
     }
     var x= 0;
-    for(var i=0;i<12;i++)
+    for(let i=0;i<5;i++)
     {
-      x=x+100
-      const smily = new PIXI.Texture(resources['front'].texture,
-      new PIXI.Rectangle(0,0,71,95),new PIXI.Rectangle(72,0,71,95));
-      const front = PIXI.Sprite.from(smily);
-      front.scale.set(1.3);
-      front.x=x;
-      game.stage.addChild(front);
+      for(let j=0;j<4;j++)
+      {
+        x=x+100
+        const smily = new PIXI.Texture(resources['front'].texture,
+        new PIXI.Rectangle(0,0,71,95),new PIXI.Rectangle(72,0,71,95));
+        const front = PIXI.Sprite.from(smily);
+        front.scale.set(1.3);
+        front.x=x;
+        game.stage.addChild(front);
+      }
   }
 }
 function toggle(){
