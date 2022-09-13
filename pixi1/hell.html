@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Node{
+            constructor(element)
+            {
+                this.element =element;
+                this.next = null;
+            }
+        }
+        add(element){
+            var node = new Node(element);
+            var current;
+            if(this.head == null){
+                this.head=node;
+            }
+            else{
+                current = this.head;
+            }
+            while(current.next){
+                current=current.next;
+            }
+            
+        }
+    </script>
+</body>
+</html>
