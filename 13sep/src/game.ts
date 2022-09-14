@@ -1,4 +1,4 @@
-import {Application, Sprite} from 'pixi.js';
+import {Application, Sprite,Graphics} from 'pixi.js';
 import {gsap} from 'gsap';
 export class Game extends Application{
     private spin:boolean;
@@ -42,4 +42,10 @@ export class Game extends Application{
             gsap.fromTo(spin1,{angle:0},{angle:3600+stopAngle, duration:3, ease:'slow(0.9, 0.9, false)'});
         });
     }
+    // const rectangle = new Graphics();
+    // rectangle.beginFill(0xAA3388)
+    // // .lineStyle(4,0xFFA00,1)
+    // rectangle.drawRect(200,200,100,200);
+    // rectangle.endFill();
+    // this.stage.addChild(rectangle);  
 }
