@@ -1,5 +1,6 @@
 import { Application } from 'pixi.js';
 import { Game } from './Game';
+//  import { Shapes} from './Game'
 import './css/main.css';
 window.onload = ()=>{
     const gameDiv:HTMLDivElement = <HTMLDivElement>document.getElementById('game');
