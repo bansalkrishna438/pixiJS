@@ -1,5 +1,6 @@
-import { Application } from 'pixi.js';
+import { Application, Graphics } from 'pixi.js';
 import { Game } from './Game';
+import { shapes} from './app';
 import './css/main.css';
 window.onload = ()=>{
     const gameDiv:HTMLDivElement = <HTMLDivElement>document.getElementById('game');
@@ -12,4 +13,8 @@ window.onload = ()=>{
         sharedTicker: true
     });
     gameDiv.appendChild(app.view);
+    const appDiv:HTMLDivElement =<HTMLDivElement>document.getElementById('shapes);
+    // const shapes1:Graphics=new shapes1({
+        
+    })
 }

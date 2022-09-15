@@ -1,9 +1,8 @@
 import { Graphics } from "pixi.js";
+//import {gsap} from 'gsap';
 export class game extends Graphics{
     static stage: any;
     loader: any;
-    //const rectangle = new Graphics();
-    
     onLoad():void{
         const rectangle = new Graphics(this.loader.resources['rect'].texture);
         rectangle.beginFill(0xAA3388)
