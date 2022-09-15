@@ -1,4 +1,4 @@
-import {Application, Sprite,Graphics} from 'pixi.js';
+import {Application, Sprite} from 'pixi.js';
 import {gsap} from 'gsap';
 export class Game extends Application{
     private spin:boolean;
@@ -12,7 +12,7 @@ export class Game extends Application{
            
         ], this.onLoad.bind(this));
     }
-    preload(list:any[], cb:()=>{}):void {
+     preload(list:any[], cb:()=>{}):void {
         this.loader.add(list);
         this.loader.load(cb);
     }
@@ -24,7 +24,7 @@ export class Game extends Application{
         wheel.y = this.screen.height/2;
 
          spin1.anchor.set(0.5);
-         spin1.x=this.screen.width/2+5;
+         spin1.x=this.screen.width/2 +5;
          spin1.y=this.screen.height/2 +10;
          spin1.width=50;
          spin1.height=50;
@@ -42,10 +42,4 @@ export class Game extends Application{
             gsap.fromTo(spin1,{angle:0},{angle:3600+stopAngle, duration:3, ease:'slow(0.9, 0.9, false)'});
         });
     }
-    // const rectangle = new Graphics();
-    // rectangle.beginFill(0xAA3388)
-    // // .lineStyle(4,0xFFA00,1)
-    // rectangle.drawRect(200,200,100,200);
-    // rectangle.endFill();
-    // this.stage.addChild(rectangle);  
 }
