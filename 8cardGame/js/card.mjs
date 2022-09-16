@@ -7,8 +7,8 @@ import {
   import { getTextureById } from "./loader.mjs";
   
   let cardFrames = [];
-  let w = 150;
-  let h = 150;
+  let w = 71;
+  let h = 96;
   for (let i = 0; i < 4; i++) {
     for (let j = 0; j < 6; j++) {
       cardFrames.push([i * w, j * h, w, h]);

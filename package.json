@@ -20,5 +20,8 @@
     "@pixi/graphics-extras": "^6.5.2",
     "pixi.js": "^6.5.2"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "webpack-cli": "^4.10.0"
+  }
 }
