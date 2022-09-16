@@ -24,22 +24,6 @@ export class Game extends Application {
   }
   onLoad(): void {
     this.stage.interactive = true;
-
-    /*    const gob = new Spine(getResource("goblin").spineData);
-    gob.skeleton.setSkinByName("goblin");
-    gob.skeleton.setSlotsToSetupPose();
-    gob.state.setAnimation(0, "walk", true);
-    gob.x = this.screen.width / 2;
-    gob.y = this.screen.height;
-    this.stage.addChild(gob);
-    this.stage.on("pointertap", () => {
-      // change current skin
-      const currentSkinName = gob.skeleton.skin.name;
-      const newSkinName = currentSkinName === "goblin" ? "goblingirl" : "goblin";
-      gob.skeleton.setSkinByName(newSkinName);
-      gob.skeleton.setSlotsToSetupPose();
-    });
-    */
     const hero = new Spine(getResource("boy").spineData);
     hero.x = this.screen.width / 2;
     hero.y = this.screen.height;
