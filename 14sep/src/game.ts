@@ -7,7 +7,7 @@ export class Game extends Application {
     super(opts);
     this.preload(
       [
-        { name: "wheel", url: "assets/wheel.png" },
+        { name: "wheel", url: "assets/wheel.webp" },
         { name: "goblin", url: "assets/goblins/goblins.json" },
         { name: "boy", url: "assets/spineboy/spineboy.json" },
         { name: "hero", url: "assets/hero/hero.json" },
@@ -24,6 +24,10 @@ export class Game extends Application {
   }
   onLoad(): void {
     this.stage.interactive = true;
+    const wheel = new Sprite(this.loader.resources['wheel'].texture);
+    wheel.width=innerWidth;
+     wheel.height=innerHeight;
+    this.stage.addChild(wheel);
     const hero = new Spine(getResource("boy").spineData);
     hero.x = this.screen.width / 2;
     hero.y = this.screen.height;
