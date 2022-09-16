@@ -57,8 +57,7 @@ export class Game extends Application{
                     this.messageContianer.addChild(rectangle); 
                     this.pro(random);
                 }, 1000);                
-            }});
-            
+            }});  
         });
     }
     pro(random:any):any{
@@ -70,9 +69,9 @@ export class Game extends Application{
         console.log(arr[random]);
         setTimeout(() => {
             this.messageContianer.addChild(t);
-        }, 1000);
-        //this.stage.addChild(t);
-        
-    }
-    
+        }, 500);
+        setTimeout(() => {
+            this.messageContianer.visible=false;
+        }, 3000);
+    }   
 }
