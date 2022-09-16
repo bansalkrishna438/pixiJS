@@ -8,7 +8,6 @@ export class Game extends Application{
     constructor(opts:any) {
         super(opts);
         this.preload([
-            
             {name:'wheel', url:'assets/wheel1.png'},
             {name:'spin',url:'assets/arrow.png'}
            
